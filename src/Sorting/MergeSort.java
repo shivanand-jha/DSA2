@@ -4,7 +4,6 @@ public class MergeSort {
     public static void main(String[] args) {
         int[] a={1,3,5,7,9};
         int[] b={2,4,6,8,10};
-//        System.out.println(MSort(a,b));
         for (int c :
                 MSort(a, b)) {
             System.out.println(c);
