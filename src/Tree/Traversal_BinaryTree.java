@@ -11,7 +11,7 @@ class Node {
 
     public Node(int item)
     {
-        key = item;
+        this.key = item;
         left = right = null;
     }
 }
@@ -85,16 +85,13 @@ class BinaryTree {
         tree.root.left.left = new Node(4);
         tree.root.left.right = new Node(5);
 
-        System.out.println(
-                "Preorder traversal of binary tree is ");
+        System.out.println("Preorder traversal of binary tree is ");
         tree.printPreorder();
 
-        System.out.println(
-                "\nInorder traversal of binary tree is ");
+        System.out.println("\nInorder traversal of binary tree is ");
         tree.printInorder();
 
-        System.out.println(
-                "\nPostorder traversal of binary tree is ");
+        System.out.println("\nPostorder traversal of binary tree is ");
         tree.printPostorder();
     }
 }
