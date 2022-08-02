@@ -1,20 +1,14 @@
 class Solution {
     public int kthSmallest(int[][] m, int k) {
-       List<Integer> l= new ArrayList<>();
-       for(int[] a: m)
-       {
-           for(int b:a)
-           {
-               l.add(b);
-           }
-           
-       }
-        int[] c=new int[l.size()];
-        for(int i=0; i<c.length; i++)
-        {
-            c[i]=l.get(i);
+        int[] a= new int[m.length*m.length];
+        int x=0;
+      for (int i = 0; i < m[0].length; i++) {
+            for (int j = 0; j <m.length ; j++) {
+                
+                a[x++]=m[i][j];
+            }
         }
-        Arrays.sort(c);
-        return c[k-1];
+        Arrays.sort(a);
+        return a[k-1];
     }
 }
