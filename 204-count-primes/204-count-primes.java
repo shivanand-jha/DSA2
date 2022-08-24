@@ -1,14 +1,19 @@
 class Solution {
     public int countPrimes(int n) {
-       boolean[] notPrime = new boolean[n];
-        int count = 0;
-        for (int i = 2; i < n; i++) {
-            if (notPrime[i] == false) {
+              boolean[] prime=new boolean[n];
+        for(int i=2;i<n;i++)
+            prime[i]=true;
+
+        for(int i=2;i*i<n;i++){
+            if(!prime[i]) continue;
+                for(int j=i*i;j<n;j=j+i){
+                    prime[j]=false;
+                } 
+        }
+        int count=0;
+        for(boolean b:prime){
+            if(b)
                 count++;
-                for (int j = 2; i*j < n; j++) {
-                    notPrime[i*j] = true;
-                }
-            }
         }
         return count;
     }
